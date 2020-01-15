@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="thread.examples"/>
+	<classpathentry kind="src" path="oops.concepts"/>
+	<classpathentry kind="src" path="design.pattern"/>
+	<classpathentry kind="src" path="string.and.array.examples"/>
+	<classpathentry kind="src" path="HackerRankQuestions"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
