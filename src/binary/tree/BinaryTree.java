@@ -84,4 +84,42 @@ public class BinaryTree {
 		}
 	}
 
+	public void printLCA(int n1, int n2){
+		BinaryTreeNode n = printLCA(root,n1,n2);
+		System.out.println("LCA is :" + n.getData());
+	}
+
+	public BinaryTreeNode printLCA(BinaryTreeNode root,int n1,int n2){
+		if(root == null)
+			return null;
+
+		if(root.data == n1 || root.data == n2)
+			return root;
+
+		BinaryTreeNode leftSubtree = printLCA(root.left,n1,n2);
+		BinaryTreeNode rightSubtree = printLCA(root.right,n1,n2);
+
+		if(leftSubtree!= null && rightSubtree!=null){
+			return root;
+		}
+
+		return leftSubtree!= null?leftSubtree:rightSubtree;
+	}
+	public  void createTree() {
+		root = new BinaryTreeNode(50);
+
+		root.left = new BinaryTreeNode(30);
+		root.left.left = new BinaryTreeNode(10);
+		root.left.right = new BinaryTreeNode(35);
+		root.left.right.right = new BinaryTreeNode(45);
+		root.left.right.right.left = new BinaryTreeNode(40);
+		root.left.right.right.left.right = new BinaryTreeNode(41);
+
+		root.right = new BinaryTreeNode(70);
+		root.right.left = new BinaryTreeNode(65);
+		root.right.right = new BinaryTreeNode(80);
+		root.right.right.right = new BinaryTreeNode(90);
+		root.right.right.right.right = new BinaryTreeNode(100);
+	}
+
 }

@@ -1,4 +1,7 @@
 package binary.tree;
+import binary.search.tree.BinarySearchTreeImpl;
+import binary.search.tree.BinarySearchTreeNode;
+
 import java.util.Scanner;
 
 public class BinaryTreeOperations {
@@ -19,6 +22,7 @@ public class BinaryTreeOperations {
 			System.out.println("2. search");
 			System.out.println("3. count nodes");
 			System.out.println("4. check empty");
+			System.out.println("5. Find LCA of 2 nodes");
 
 			int choice = scan.nextInt();
 			switch (choice) {
@@ -36,6 +40,15 @@ public class BinaryTreeOperations {
 			case 4:
 				System.out.println("Empty status = " + bt.isEmpty());
 				break;
+			case 5:
+				bt.createTree();
+				System.out.println("Enter Node 1");
+				int i = scan.nextInt();
+
+				System.out.println("Enter Node 2");
+				int j = scan.nextInt();
+				bt.printLCA(i,j);
+				break;
 			default:
 				System.out.println("Wrong Entry \n ");
 				break;
@@ -43,11 +56,13 @@ public class BinaryTreeOperations {
 
 			System.out.print("\nIn order : ");
             bt.inorder();
-            
+
             
 			System.out.println("\n\nDo you want to continue (Type y or n) \n");
 			ch = scan.next().charAt(0);
 		
 		} while (ch == 'Y' || ch == 'y');
 	}
+
+
 }
