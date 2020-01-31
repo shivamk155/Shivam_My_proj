@@ -106,20 +106,66 @@ public class BinaryTree {
 		return leftSubtree!= null?leftSubtree:rightSubtree;
 	}
 	public  void createTree() {
+
 		root = new BinaryTreeNode(50);
 
 		root.left = new BinaryTreeNode(30);
 		root.left.left = new BinaryTreeNode(10);
 		root.left.right = new BinaryTreeNode(35);
-		root.left.right.right = new BinaryTreeNode(45);
-		root.left.right.right.left = new BinaryTreeNode(40);
-		root.left.right.right.left.right = new BinaryTreeNode(41);
+//		root.left.right.right = new BinaryTreeNode(45);
+//		root.left.right.right.left = new BinaryTreeNode(40);
+//		root.left.right.right.left.right = new BinaryTreeNode(41);
 
 		root.right = new BinaryTreeNode(70);
 		root.right.left = new BinaryTreeNode(65);
-		root.right.right = new BinaryTreeNode(80);
-		root.right.right.right = new BinaryTreeNode(90);
-		root.right.right.right.right = new BinaryTreeNode(100);
+//		root.right.right = new BinaryTreeNode(80);
+//		root.right.right.right = new BinaryTreeNode(90);
+//		root.right.right.right.right = new BinaryTreeNode(100);
+	}
+
+	public String serializeTree(){
+		String str = "";
+		return serializeTree(root, str);
+	}
+
+	public String serializeTree(BinaryTreeNode root, String str){
+		if(root == null)
+			return str;
+
+		str = str + " " + root.getData();
+
+		if(null!=root.getLeft()){
+			str = serializeTree(root.getLeft(), str);
+		}else {
+			str = str + " -1 ";
+		}
+
+		if(null!=root.getRight()){
+			str = serializeTree(root.getRight(), str);
+		}else {
+			str = str + " -1 ";
+		}
+
+		return str;
+	}
+
+	static int index;
+	public void deserializeTree(String str){
+		String[] arr = str.split(",");
+		root = deserializeTree(arr);
+	}
+
+	public BinaryTreeNode deserializeTree(String[] str){
+		if(str[index].equalsIgnoreCase("-1")){
+			index++;
+			return null;
+		}
+
+		BinaryTreeNode node = new BinaryTreeNode(Integer.parseInt(str[index++]));
+		node.setLeft(deserializeTree(str));
+		node.setRight(deserializeTree(str));
+
+	return node;
 	}
 
 }

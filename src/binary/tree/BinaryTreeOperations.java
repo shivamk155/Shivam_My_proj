@@ -23,6 +23,8 @@ public class BinaryTreeOperations {
 			System.out.println("3. count nodes");
 			System.out.println("4. check empty");
 			System.out.println("5. Find LCA of 2 nodes");
+			System.out.println("6. Serialize Binary tree");
+			System.out.println("7. De-Serialize Binary tree");
 
 			int choice = scan.nextInt();
 			switch (choice) {
@@ -49,6 +51,16 @@ public class BinaryTreeOperations {
 				int j = scan.nextInt();
 				bt.printLCA(i,j);
 				break;
+			case 6:
+				bt.createTree();
+				System.out.println("Serialization of binary tree is: " + bt.serializeTree());
+				break;
+				case 7:
+					bt.createTree();
+					//String str = "50,30,10,-1,-1,35,-1,-1,70,65,-1,-1,-1";
+					String str = "1,2,-1,30,-1,-1,4,-1,-1";
+					bt.deserializeTree(str);
+					break;
 			default:
 				System.out.println("Wrong Entry \n ");
 				break;
