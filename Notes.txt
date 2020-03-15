@@ -1,0 +1,20 @@
+List of approaches of a problem
+
+1. Using hashing or HashMaps and HashSets
+2. Using stacks and queues , even multiple stacks and queues at a time.
+3. Using trees , BST, BT, Min heap, Max Heap, AVL tree
+4. Using graphs, directed or undirected.
+5. Always tries to see a pattern in the problem
+6. Tries for one very very simple or general set. ---> Very Very very Imp tip
+
+
+## Key problems to visit
+1. knight tour problem
+2. Coin change problem (Minimum coin sum) without and without DP
+3. Distance between two nodes of a binary tree
+4. Quicksort / Mergesort
+5. largest contigous sum / Largest contigous subarray with sum 0//Largest difference , greater being on the righter side.
+6. KMP Pattern matching
+7. Distance between 2 nodes in a binary tree/ Nodes with Kth distance form a given node
+8. Trapping water problem
+9. Graph DFS
