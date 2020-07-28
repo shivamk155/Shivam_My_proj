@@ -1,8 +1,5 @@
 package binary.tree;
 
-import binary.search.tree.BinarySearchTreeImpl;
-import binary.search.tree.BinarySearchTreeNode;
-
 import java.util.Scanner;
 
 public class BinaryTreeOperations {
@@ -29,6 +26,8 @@ public class BinaryTreeOperations {
             System.out.println("8. Find difference between 2 nodes");
             System.out.println("9. Right view of a binary tree");
             System.out.println("10. Is Binary Search Tree or Not");
+            System.out.println("11. Convert Binary Tree to Binary Search Tree ");
+            System.out.println("12. Convert Binary Tree from Inorder and PostOrder ");
 
 
             int choice = scan.nextInt();
@@ -48,7 +47,7 @@ public class BinaryTreeOperations {
                     System.out.println("Empty status = " + bt.isEmpty());
                     break;
                 case 5:
-                    bt.createTree();
+                    bt.createBinarySearchTree();
                     System.out.println("Enter Node 1");
                     int i = scan.nextInt();
 
@@ -57,18 +56,18 @@ public class BinaryTreeOperations {
                     bt.printLCA(i, j);
                     break;
                 case 6:
-                    bt.createTree();
+                    bt.createBinarySearchTree();
                     System.out.println("Serialization of binary tree is: " + bt.serializeTree());
                     break;
                 case 7:
-                    bt.createTree();
+                    bt.createBinarySearchTree();
                     //String str = "50,30,10,-1,-1,35,-1,-1,70,65,-1,-1,-1";
                     String str = "1,2,-1,30,-1,-1,4,-1,-1";
                     bt.deserializeTree(str);
                     break;
 
                 case 8:
-                    bt.createTree();
+                    bt.createBinarySearchTree();
                     System.out.println("Enter Node 1");
                     int a = scan.nextInt();
 
@@ -79,13 +78,25 @@ public class BinaryTreeOperations {
                     break;
 
                 case 9:
-                    bt.createTree();
+                    bt.createBinarySearchTree();
                     bt.rightViewTree();
                     break;
 
                 case 10:
-                    bt.createTree();
+                    bt.createBinarySearchTree();
                     bt.checkBinaryTree();
+                    break;
+
+                case 11:
+                    bt.createBinaryTree();
+                    bt.convertBT2BST();
+                    break;
+
+                case 12:
+                    int[] in = {4, 8, 2, 5, 1, 6, 3, 7};
+                    int[] post = {8, 4, 5, 2, 6, 7, 3, 1};
+                    bt.createTreeFromInAndPreOrder(in,post);
+                    bt.preOrder();
                     break;
 
                 default:

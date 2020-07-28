@@ -1,5 +1,10 @@
 package binary.tree;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 public class BinaryTree {
 
     private BinaryTreeNode root;
@@ -88,6 +93,19 @@ public class BinaryTree {
         }
     }
 
+    public void preOrder() {
+        preOrder(root);
+    }
+
+    private void preOrder(BinaryTreeNode r) {
+        if (r != null) {
+            System.out.print(r.getData() + " ");
+            preOrder(r.getLeft());
+            preOrder(r.getRight());
+        }
+    }
+
+
     public void printLCA(int n1, int n2) {
         BinaryTreeNode n = printLCA(root, n1, n2);
         System.out.println("LCA is :" + n.getData());
@@ -169,7 +187,7 @@ public class BinaryTree {
         rightViewTree(root.left, a + 1);
     }
 
-    public void createTree() {
+    public void createBinarySearchTree() {
 
         root = new BinaryTreeNode(50);
 
@@ -185,6 +203,24 @@ public class BinaryTree {
         root.right.right = new BinaryTreeNode(80);
         root.right.right.right = new BinaryTreeNode(90);
         root.right.right.right.right = new BinaryTreeNode(100);
+    }
+
+    public void createBinaryTree() {
+
+        root = new BinaryTreeNode(50);
+
+        root.left = new BinaryTreeNode(80);
+        root.left.left = new BinaryTreeNode(10);
+        root.left.right = new BinaryTreeNode(135);
+        root.left.right.right = new BinaryTreeNode(45);
+//        root.left.right.right.left = new BinaryTreeNode(40);
+//        root.left.right.right.left.right = new BinaryTreeNode(41);
+
+        root.right = new BinaryTreeNode(70);
+        root.right.left = new BinaryTreeNode(65);
+        root.right.right = new BinaryTreeNode(8);
+//        root.right.right.right = new BinaryTreeNode(90);
+//        root.right.right.right.right = new BinaryTreeNode(100);
     }
 
     public String serializeTree() {
@@ -244,7 +280,7 @@ public class BinaryTree {
     public void checkBinaryTree(BinaryTreeNode root, int min, int max) {
         if (root == null)
             return;
-        
+
         if (!(root.data > min && root.data < max)) {
             isBST = false;
             return;
@@ -253,4 +289,65 @@ public class BinaryTree {
         checkBinaryTree(root.left, min, root.data);
         checkBinaryTree(root.right, root.data, max);
     }
+
+    public void convertBT2BST() {
+        inorder();
+        List<Integer> list = new ArrayList<>();
+        createInorderList(this.root, list);
+        Collections.sort(list);
+
+        convertBT2BST(this.root, list);
+    }
+
+    public void convertBT2BST(BinaryTreeNode node, List<Integer> list) {
+        if (node == null)
+            return;
+
+        convertBT2BST(node.left, list);
+        node.setData(list.get(this.k));
+        k++;
+        convertBT2BST(node.right, list);
+    }
+
+    public void createInorderList(BinaryTreeNode node, List list) {
+        if (node == null)
+            return;
+
+        createInorderList(node.left, list);
+        list.add(node.data);
+        createInorderList(node.right, list);
+    }
+
+    public void createTreeFromInAndPreOrder(int[] inOrder, int[] postOrder) {
+        this.root = createTreeFromInAndPreOrder(this.root, inOrder, 0, inOrder.length - 1, postOrder, 0, postOrder.length - 1);
+        System.out.println("shivam");
+    }
+
+    public BinaryTreeNode createTreeFromInAndPreOrder(BinaryTreeNode node, int[] inOrder, int inStart, int inEnd, int[] postOrder, int postStart, int postEnd) {
+        if (inStart > inEnd)
+            return null;
+
+        int currRoot = postOrder[postEnd];
+        node = new BinaryTreeNode(currRoot);
+
+        int position = findElementIndex(currRoot, inOrder);
+        int currLength = position - inStart;
+
+        node.left = createTreeFromInAndPreOrder(node.left, inOrder, inStart, position - 1, postOrder, postStart, postStart + currLength - 1);
+        node.right = createTreeFromInAndPreOrder(node.right, inOrder, position + 1, inEnd, postOrder, postStart + currLength, postEnd - 1);
+
+        return node;
+    }
+
+    public int findElementIndex(int element, int[] inOrder) {
+        int k = 0;
+        for (int i : inOrder) {
+            if (i == element)
+                break;
+
+            k++;
+        }
+        return k;
+    }
+
 }

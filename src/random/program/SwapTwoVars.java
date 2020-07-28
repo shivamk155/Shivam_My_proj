@@ -4,7 +4,7 @@ import com.sun.xml.internal.ws.api.client.SelectOptimalEncodingFeature;
 
 public class SwapTwoVars {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         // 0,1,1,2,3,5,8,13,21,....
         int k = 3;
 

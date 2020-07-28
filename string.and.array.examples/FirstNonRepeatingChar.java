@@ -1,17 +1,27 @@
-import java.util.HashSet;
-import java.util.Set;
 
 public class FirstNonRepeatingChar {
+    public static void main(String[] args) {
+        String str = "geeksforgeeks";
+        int k = getFirstNonRepChar(str);
 
-	public static void main(String[] args) {
-		String s = "abcdefghb";
-		Set<String> set= new HashSet<>();
-		
-		for(int i=0;i<s.length();i++){
-			if(!set.add(String.valueOf(s.charAt(i)))){
-				System.out.println(s.charAt(i));				
-				break;
-			}
-		}
-	}
+        System.out.println(str.charAt(k));
+    }
+
+    public static int getFirstNonRepChar(String str) {
+        CountIndex[] arr = new CountIndex[256];
+
+        for (int i = 0; i < str.length(); i++) {
+            if (null == arr[str.charAt(i)])
+                arr[str.charAt(i)] = new CountIndex(i);
+            else
+                arr[str.charAt(i)].incCount();
+        }
+
+        for (int i = 0; i < str.length(); i++)
+            if (arr[str.charAt(i)].frequency == 1)
+                return arr[str.charAt(i)].firstIndex;
+
+
+        return -1;
+    }
 }

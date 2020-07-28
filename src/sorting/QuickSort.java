@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class QuickSort {
     public static void main(String[] args) {
-        int[] arr = {100, 90, 80, 85, 70, 50, 45};
+        int[] arr =  {6, 1, 4, 3, 2, 9, 5};// {10, 7, 8, 9, 1, 5};// {100, 90, 80, 85, 70, 50, 45};
         int low = 0;
         int high = arr.length - 1;
         quicksort(arr, low, high);

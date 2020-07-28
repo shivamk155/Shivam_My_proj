@@ -1,10 +1,6 @@
 package string.questions;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeMap;
+import java.util.*;
 
 //This question is a typical example of greedy algorithm
 public class MaximumMeetingsOneRoom {
