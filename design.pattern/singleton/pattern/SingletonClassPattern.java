@@ -10,16 +10,14 @@ public class SingletonClassPattern implements Serializable{
 		if(null != s){
 			System.out.println("Illegal attempt of creating instance :");
 		}
-		
 	}
 	
 	public static SingletonClassPattern getInstance(){
 		
 		if(null == s){
 			synchronized(SingletonClassPattern.class){
-				if(null == s){
+				if(null == s)
 					s = new SingletonClassPattern();
-				}
 			}
 		}	
 	return s;
@@ -28,6 +26,4 @@ public class SingletonClassPattern implements Serializable{
 	protected Object readResolve(){
 		return s;
 	}
-	
-	
 }

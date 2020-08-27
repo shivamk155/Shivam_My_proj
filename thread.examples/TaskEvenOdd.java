@@ -24,8 +24,6 @@ class TaskEvenOdd implements Runnable {
 	            }
 	            number += 2;
 	        }
-
 	    }
-
 	}
 

@@ -1,7 +1,6 @@
 class Printer {
 
     boolean isOdd = false;
-
     synchronized void printEven(int number) {
 
         while (isOdd == false) {
@@ -28,5 +27,4 @@ class Printer {
         isOdd = true;
         notifyAll();
     }
-
 }

@@ -1,0 +1,3 @@
+Out of all the patterns mentioned here, Builder, Bridge and Visitor are the most used and important patterns.
+
+The use case of Visitor pattern is very useful.

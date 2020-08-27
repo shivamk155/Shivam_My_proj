@@ -1,0 +1,16 @@
+By definition, this pattern is used to decouple the implementation from its abstraction so that these two can vary independently.
+This pattern gets used when you have independent hierarchies of implementation to grow or get modified independently.
+
+the example of Spotify where same page(views, can be short or long) can be used to show artists, playlists,
+songs and properties of these 2 differ vastly, like artist can have image, song cannot.
+
+Lets assume if this pattern is not applied -----> then in such case , just like cartesian product example,
+this particular scenario would have separate class for each scenario i.e. LongViewArtists, ShortViewArtists, LongViewSongs, LongViewPlaylists
+, instead of A*B you can have A+B classes to cover every scenario.
+
+this pattern can also be used to answer sapient interview question where there were multiple types of products
+and we can short view or long view them.
+
+To me Bridge patterns seems like the Adapter pattern where the adaptee is an abstract strategy.
+Where, importantly (and as you say) the abstract adapter forces concrete adapters
+to accept an abstract strategy in the constructor (or rather: is dependency injected some way).

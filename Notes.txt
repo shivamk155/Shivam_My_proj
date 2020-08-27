@@ -18,3 +18,23 @@ List of approaches of a problem
 7. Distance between 2 nodes in a binary tree/ Nodes with Kth distance form a given node
 8. Trapping water problem
 9. Graph DFS
+
+============================================================================
+Important things about oops...very very very important
+
+1. https://www.youtube.com/watch?v=-YoX9KRW89E&list=PL4KdJM8LzAMfSrWJldnGuU9O1EpsVbXZJ&index=6
+2. https://stackoverflow.com/questions/23406307/whats-the-difference-between-objects-and-data-structures#:~:text=Objects%20hide%20their%20data%20behind,expose%20behavior%20and%20hide%20data.
+3. https://hackernoon.com/objects-vs-data-structures-e380b962c1d2
+4. https://blog.cleancoder.com/uncle-bob/2019/06/16/ObjectsAndDataStructures.html
+
+============================================================================
+questions and things to take care while designing a problem
+1. Difference between obejcts and data structures
+2. Use objects or data structures ?
+3. Application should have, objects and data structures and then abjects who uses these 2 to perform a task. For e.g.mtaskvalidator()
+4. States i.e. data structures should be passed very very less number of times.
+
+SOLID
+5. https://itnext.io/solid-principles-explanation-and-examples-715b975dcad4
+6. https://medium.com/@mari_azevedo/s-o-l-i-d-principles-what-are-they-and-why-projects-should-use-them-50b85e4aa8b6
+

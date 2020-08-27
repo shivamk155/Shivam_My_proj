@@ -1,5 +1,7 @@
 package builder.pattern;
 
+//Read about why static inner class and more about inner classes.
+//Notice of private outer class constructor
 public class EmployeeBuilder {
 
 	private int empId;
